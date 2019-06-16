@@ -1,0 +1,7 @@
+name: infinite-scroll
+dependencies:
+  - python>3.7
+  - pip
+  - selenium
+  - pip:
+    - bs4

@@ -1,0 +1,85 @@
+<html class="js" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible"/>
+<meta content="width=500" name="viewport"/>
+<meta content="ScrollMagic, example, scrolling, attaching, scrollbar, infinite, dynamic, pages" name="keywords"/>
+<meta content="Jan Paepke (www.janpaepke.de)" name="author"/>
+<title>Infinite Scrolling - Examples - ScrollMagic</title>
+<link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,400italic|Josefin+Slab:400,700italic" rel="stylesheet" type="text/css"/>
+<link href="../../assets/css/normalize.css" rel="stylesheet" type="text/css"/>
+<link href="../../assets/css/style.css" rel="stylesheet" type="text/css"/>
+<link href="../../assets/css/examples.css" rel="stylesheet" type="text/css"/>
+<link href="../../assets/img/favicon.ico" rel="shortcut icon" type="image/x-icon"/>
+<script async="" src="//www.google-analytics.com/analytics.js"></script><script src="../../assets/js/lib/jquery.min.js" type="text/javascript"></script>
+<script src="../../assets/js/lib/highlight.pack.js" type="text/javascript"></script>
+<script src="../../assets/js/lib/modernizr.custom.min.js" type="text/javascript"></script>
+<script src="../../assets/js/examples.js" type="text/javascript"></script>
+<script src="../../scrollmagic/uncompressed/ScrollMagic.js" type="text/javascript"></script>
+</head>
+<body>
+<div class="menuwrap"><ul id="menu"><li><a href="../basic">Basic</a><ul><li><a href="../basic/simple_tweening.html">Animating with GSAP</a></li><li><a href="../basic/simple_velocity.html">Animating with Velocity</a></li><li><a href="../basic/simple_pinning.html">Sticky Elements (pinning)</a></li><li><a href="../basic/section_wipes_natural.html">Section Wipes (natural)</a></li><li><a href="../basic/scene_manipulation.html">Scene Manipulation</a></li><li><a href="../basic/going_horizontal.html">Going Horizontal</a></li><li><a href="../basic/class_toggles.html">CSS Class Toggles</a></li><li><a href="../basic/reveal_on_scroll.html">Reveal on Scroll</a></li><li><a href="../basic/responsive_duration.html">Responsive Duration</a></li><li><a href="../basic/custom_actions.html">Custom Actions</a></li><li><a href="../basic/debugging.html">Debugging</a></li></ul></li><li class="current"><a href="../advanced">Advanced</a><ul><li><a href="../advanced/animate_css.html">Animating with CSS</a></li><li><a href="../advanced/advanced_tweening.html">Advanced Tweening</a></li><li><a href="../advanced/section_wipes_manual.html">Section Wipes (manual)</a></li><li><a href="../advanced/section_slides_manual.html">Section Slides (manual)</a></li><li><a href="../advanced/svg_drawing.html">SVG Drawing</a></li><li><a href="../advanced/custom_containers.html">Custom Containers</a></li><li><a href="../advanced/mobile_basic.html">Mobile Support (Basic)</a></li><li><a href="../advanced/anchor_link_scrolling.html">Anchor Link Scrolling</a></li><li><a href="../advanced/parallax_scrolling.html">Parallax Scrolling</a></li><li><a href="../advanced/parallax_sections.html">Parallax Sections</a></li><li class="current"><a href="../advanced/infinite_scrolling.html">Infinite Scrolling</a></li></ul></li><li><a href="../expert">Expert</a><ul><li><a href="../expert/cascading_pins.html">Cascading Pins</a></li><li><a href="../expert/callback_duration.html">Callback Duration</a></li><li><a href="../expert/manipulating_tweens.html">Manipulating Tweens</a></li><li><a href="../expert/bezier_path_animation.html">Bezier Path Animation</a></li><li><a href="../expert/multiple_scroll_directions.html">Multiple Scroll Directions</a></li><li><a href="../expert/mobile_advanced.html">Mobile Support (Advanced)</a></li><li><a href="../expert/image_sequence.html">Image Sequence</a></li><li><a href="../expert/removing_and_destroying.html">Removing and Destroying</a></li></ul></li></ul><a class="prev" href="../advanced/parallax_sections.html" title="Advanced / Parallax Sections">◄</a><a class="next" href="../expert/cascading_pins.html" title="Expert / Cascading Pins">►</a></div>
+<div id="content-wrapper">
+<div id="example-wrapper">
+<div class="scrollContent">
+<section id="titlechart">
+<div id="description">
+<h1>Infinite Scrolling</h1>
+<h2>Dynamic content pages become scroll magical.</h2>
+<p>An infinite-content page can be achieved by adding a scene that triggers at the bottom of the page.</p>
+<ol>
+<li>On Scene start enter loading state. Save the state to prevent multiple triggers. In this example the class of the #loader element is used.</li>
+<li>Make ajax call to load additional content (if not already in loading state).</li>
+<li>When receiving the ajax "load" event, add the content to your container, update the scene and revert to original state.</li>
+</ol>
+<p>The demo below doesn't really use ajax to ensure offline compatibility. Instead it uses a function to immitate an ajax call to add content.</p>
+<a class="viewsource" href="#">view source</a>
+</div>
+</section>
+<section class="demo dynamicContent">
+<div id="content">
+<div class="box1" style="background-color: rgb(184, 88, 72);"></div><div class="box1" style="background-color: rgb(17, 40, 251);"></div><div class="box1" style="background-color: rgb(112, 51, 19);"></div><div class="box1" style="background-color: rgb(104, 37, 248);"></div><div class="box1" style="background-color: rgb(197, 141, 112);"></div><div class="box1" style="background-color: rgb(172, 134, 154);"></div><div class="box1" style="background-color: rgb(86, 170, 2);"></div><div class="box1" style="background-color: rgb(50, 204, 66);"></div><div class="box1" style="background-color: rgb(249, 49, 189);"></div><div class="box1" style="background-color: rgb(126, 71, 19);"></div><div class="box1" style="background-color: rgb(120, 37, 249);"></div><div class="box1" style="background-color: rgb(73, 141, 202);"></div><div class="box1" style="background-color: rgb(46, 136, 108);"></div><div class="box1" style="background-color: rgb(16, 198, 128);"></div><div class="box1" style="background-color: rgb(172, 34, 73);"></div><div class="box1" style="background-color: rgb(24, 222, 29);"></div><div class="box1" style="background-color: rgb(66, 255, 222);"></div><div class="box1" style="background-color: rgb(159, 157, 140);"></div><div class="box1" style="background-color: rgb(1, 164, 50);"></div><div class="box1" style="background-color: rgb(159, 96, 84);"></div><div class="box1" style="background-color: rgb(180, 15, 108);"></div><div class="box1" style="background-color: rgb(128, 115, 153);"></div><div class="box1" style="background-color: rgb(15, 85, 13);"></div><div class="box1" style="background-color: rgb(83, 90, 247);"></div><div class="box1" style="background-color: rgb(167, 132, 236);"></div><div class="box1" style="background-color: rgb(69, 172, 132);"></div><div class="box1" style="background-color: rgb(102, 57, 108);"></div><div class="box1" style="background-color: rgb(67, 123, 120);"></div><div class="box1" style="background-color: rgb(114, 46, 158);"></div><div class="box1" style="background-color: rgb(161, 116, 14);"></div><div class="box1" style="background-color: rgb(232, 177, 106);"></div><div class="box1" style="background-color: rgb(118, 226, 197);"></div><div class="box1" style="background-color: rgb(196, 219, 141);"></div><div class="box1" style="background-color: rgb(11, 165, 241);"></div><div class="box1" style="background-color: rgb(110, 183, 7);"></div><div class="box1" style="background-color: rgb(194, 228, 87);"></div></div>
+<div class="" id="loader">
+<img src="../../assets/img/example_loading.gif"/>
+						LOADING...
+					</div>
+<script>
+						// init controller
+						var controller = new ScrollMagic.Controller();
+
+						// build scene
+						var scene = new ScrollMagic.Scene({triggerElement: ".dynamicContent #loader", triggerHook: "onEnter"})
+										.addTo(controller)
+										.on("enter", function (e) {
+											if (!$("#loader").hasClass("active")) {
+												$("#loader").addClass("active");
+												if (console){
+													console.log("loading new items");
+												}
+												// simulate ajax call to add content using the function below
+												setTimeout(addBoxes, 1000, 9);
+											}
+										});
+
+						// pseudo function to add new content. In real life it would be done through an ajax request.
+						function addBoxes (amount) {
+							for (i=1; i<=amount; i++) {
+								var randomColor = '#'+('00000'+(Math.random()*0xFFFFFF<<0).toString(16)).slice(-6);
+								$("<div></div>")
+									.addClass("box1")
+									.css("background-color", randomColor)
+									.appendTo(".dynamicContent #content");
+							}
+							// "loading" done -> revert to normal state
+							scene.update(); // make sure the scene gets the new start position
+							$("#loader").removeClass("active");
+						}
+
+						// add some boxes to start with.
+						addBoxes(18);
+					</script>
+</section>
+</div>
+</div>
+</div>
+<script src="../../assets/js/tracking.js" type="text/javascript"></script>
+</body></html>
